@@ -103,7 +103,7 @@ cd web && npm run lint && npm run build
 ```
 
 The Pest suite talks to a real MySQL database (`mtb_test`) and real Redis;
-`docker compose up` provides both. CI runs the same on a PHP 8.3 / 8.4 matrix.
+`docker compose up` provides both. CI runs the same on PHP 8.4.
 
 ## Stack
 
