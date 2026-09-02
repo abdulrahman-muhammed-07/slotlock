@@ -1,0 +1,4 @@
+.DS_Store
+*.log
+
+# Each sub-project keeps its own ignore rules (api/.gitignore, web/.gitignore).
