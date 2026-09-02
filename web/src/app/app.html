@@ -1,0 +1,64 @@
+<main>
+  <h1>Multi-Tenant Booking</h1>
+
+  @if (!authed()) {
+    <section class="card">
+      <h2>Sign in</h2>
+      <label>Email <input name="email" [(ngModel)]="email" /></label>
+      <label>Password <input name="password" type="password" [(ngModel)]="password" /></label>
+      <button type="button" (click)="login()">Sign in</button>
+      @if (error()) {
+        <p class="error">{{ error() }}</p>
+      }
+    </section>
+  } @else {
+    <button type="button" class="link" (click)="logout()">Sign out</button>
+
+    <section class="card">
+      <h2>Resources</h2>
+      <ul class="resources">
+        @for (resource of resources(); track resource.id) {
+          <li>
+            <button
+              type="button"
+              [class.active]="selected()?.id === resource.id"
+              (click)="select(resource)"
+            >
+              {{ resource.name }} <span class="muted">(seats {{ resource.capacity }})</span>
+            </button>
+          </li>
+        } @empty {
+          <li class="muted">No resources.</li>
+        }
+      </ul>
+    </section>
+
+    @if (selected(); as resource) {
+      <section class="card">
+        <h2>{{ resource.name }} availability</h2>
+        <label>Date <input name="date" type="date" [(ngModel)]="date" (change)="refreshAvailability()" /></label>
+
+        <p>Booked slots:</p>
+        <ul class="slots">
+          @for (slot of bookedSlots(); track slot) {
+            <li>{{ slot }}</li>
+          } @empty {
+            <li class="muted">Nothing booked for this date.</li>
+          }
+        </ul>
+
+        <h3>Book a slot</h3>
+        <label>Time <input name="slotTime" type="time" step="3600" [(ngModel)]="slotTime" /></label>
+        <label>Name <input name="customerName" [(ngModel)]="customerName" /></label>
+        <button type="button" (click)="book()">Book</button>
+
+        @if (message()) {
+          <p class="ok">{{ message() }}</p>
+        }
+        @if (error()) {
+          <p class="error">{{ error() }}</p>
+        }
+      </section>
+    }
+  }
+</main>

@@ -1,0 +1,59 @@
+main {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input {
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+button.link {
+  background: none;
+  border: none;
+  color: #06c;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.resources button.active {
+  font-weight: bold;
+  outline: 2px solid #06c;
+}
+
+ul.resources,
+ul.slots {
+  list-style: none;
+  padding: 0;
+}
+
+.muted {
+  color: #888;
+}
+
+.error {
+  color: #c00;
+}
+
+.ok {
+  color: #080;
+}
