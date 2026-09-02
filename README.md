@@ -2,7 +2,7 @@
 
 Multi-tenant booking API with a concurrency-safe reservation path. Laravel plus a small Angular client.
 
-[![CI](https://github.com/abdulrahman-muhammed-07/slotlock/actions/workflows/ci.yml/badge.svg)](https://github.com/abdulrahman-muhammed-07/slotlock/actions/workflows/ci.yml)
+[![CI](https://github.com/abdulrahmanelnegery/slotlock/actions/workflows/ci.yml/badge.svg)](https://github.com/abdulrahmanelnegery/slotlock/actions/workflows/ci.yml)
 
 A reference implementation of three things a booking backend has to get right:
 multi-tenant isolation, a concurrency-safe reservation path, and cache-aside
